@@ -1,0 +1,27 @@
+{% extends 'mainApp/base.html' %}
+{% load staticfiles %}
+
+{% block base %}
+<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<h1>Event Calendar</h1>
+				{% if request.user.is_authenticated %}
+					<span>Hi, {{ request.user.username }}</span>
+					<a href="account/logout">Logout</a>
+				{% endif %}
+			</div>
+			<div class="col-lg-4">
+				<button onclick="window.location='entry/add'" type="button" class="btn btn-success">Add Event</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			{% for entry in entries %}
+				{% include 'mainApp/_calendar_entry.html' %}
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

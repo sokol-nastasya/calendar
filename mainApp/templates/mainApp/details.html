@@ -1,0 +1,14 @@
+{% extends 'mainApp/base.html' %}
+{% load staticfiles %}
+
+{% block base %}
+
+<div class="container jumbotron">
+		<h1>{{ entries.name }}</h1>
+		<span>{{ entries.date }}</span>
+		<hr>
+		<h3>{{ entries.descriptions }}</h3>
+</div>
+
+
+{% endblock %}

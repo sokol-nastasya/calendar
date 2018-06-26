@@ -1,0 +1,12 @@
+<div class="calendar_entry col-lg-4">
+	<br />
+	<h2>{{ entry.name }}</h2>
+	<hr>
+	<h4>{{ entry.date }}</h4>
+	<p>
+		{{ entry.descriptions|truncatechars:50 }}
+	</p>
+	<button onclick="window.location='{% url 'mainApp:details' pk=entry.id %}' " class="btn btn-primary">Details</button>
+	<button data-id="{{ entry.id }}" onclick="deleteCalendarEntry(this)" class="btn btn-danger">Delete</button>
+
+</div>

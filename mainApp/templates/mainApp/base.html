@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Calendar</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'mainApp/bootstrap/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mainApp/css/main.css' %}">
+	<script type="text/javascript" src="{% static 'mainApp/js/calendar.js' %}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var csrf_token = '{{ csrf_token }}'
+	</script>
+</head>
+<body>
+	<div class="container">
+		{% block base %}
+		{% endblock %}
+	</div>
+
+</body>
+</html>
